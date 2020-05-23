@@ -23,6 +23,8 @@ AFPSBlackHoleActor::AFPSBlackHoleActor()
 	OuterSphereComponent->SetSphereRadius(3000);
 	OuterSphereComponent->SetupAttachment(MeshComponent);
 
+	Strength = -2000.f;
+
 }
 
 // Called when the game starts or when spawned
@@ -44,7 +46,7 @@ void AFPSBlackHoleActor::Tick(float DeltaTime)
 	{
 		if (comp->IsSimulatingPhysics())
 		{
-			comp->AddRadialForce(GetActorLocation(), OuterSphereComponent->GetScaledSphereRadius(), -2000,
+			comp->AddRadialForce(GetActorLocation(), OuterSphereComponent->GetScaledSphereRadius(), Strength,
 			                     ERadialImpulseFalloff::RIF_Constant, true);
 		}
 	}

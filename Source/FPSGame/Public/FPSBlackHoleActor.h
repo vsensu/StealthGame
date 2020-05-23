@@ -37,4 +37,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category="Components")
 	USphereComponent* OuterSphereComponent;
 
+	UPROPERTY(EditAnywhere, Category="Gameplay")
+	float Strength;
+
 };
