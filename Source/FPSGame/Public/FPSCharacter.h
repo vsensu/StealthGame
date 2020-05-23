@@ -68,5 +68,9 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return CameraComponent; }
 
+public:
+	UPROPERTY(BlueprintReadOnly, Category="Gameplay")
+	bool bIsCarryingObjective;
+
 };
 

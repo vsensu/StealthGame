@@ -20,13 +20,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 protected:
 	UFUNCTION()
-	void OnCollision(UPrimitiveComponent* p1, AActor* p2, UPrimitiveComponent* p3, int p4, bool p5, const FHitResult& p6);
+	void OnCollision(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	void PlayEffects() const;
 	
 	UPROPERTY(VisibleAnywhere, Category="Components")
