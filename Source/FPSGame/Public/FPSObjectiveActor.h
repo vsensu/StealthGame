@@ -25,10 +25,17 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
+	UFUNCTION()
+	void OnCollision(UPrimitiveComponent* p1, AActor* p2, UPrimitiveComponent* p3, int p4, bool p5, const FHitResult& p6);
+	void PlayEffects() const;
+	
 	UPROPERTY(VisibleAnywhere, Category="Components")
 	UStaticMeshComponent* MeshComp;
 
 	UPROPERTY(VisibleAnywhere, Category="Components")
 	USphereComponent* SphereComp;
+
+	UPROPERTY(EditDefaultsOnly, Category="Effects")
+	UParticleSystem* PickupFX;
 
 };
